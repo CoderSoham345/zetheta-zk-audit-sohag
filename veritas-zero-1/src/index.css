@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 260 20% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 260 20% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 135 100% 45%;
+    --primary-foreground: 260 20% 6%;
+
+    --secondary: 280 80% 55%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 260 15% 15%;
+    --muted-foreground: 260 10% 55%;
+
+    --accent: 280 80% 55%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 20%;
+    --ring: 135 100% 45%;
+
+    --radius: 0px;
+
+    --sidebar-background: 260 20% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 135 100% 45%;
+    --sidebar-primary-foreground: 260 20% 6%;
+    --sidebar-accent: 260 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 260 15% 20%;
+    --sidebar-ring: 135 100% 45%;
+
+    --neon-green: 135 100% 45%;
+    --neon-purple: 280 80% 55%;
+    --dark-surface: 260 20% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: hsla(260, 20%, 10%, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(260, 15%, 25%, 0.6);
+  }
+
+  .glass-panel-green {
+    background: hsla(135, 100%, 45%, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(135, 100%, 45%, 0.2);
+  }
+
+  .glass-panel-purple {
+    background: hsla(280, 80%, 55%, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(280, 80%, 55%, 0.2);
+  }
+
+  .neon-green-glow {
+    color: hsl(135, 100%, 45%);
+    text-shadow: 0 0 10px hsla(135, 100%, 45%, 0.5), 0 0 30px hsla(135, 100%, 45%, 0.3);
+  }
+
+  .neon-purple-glow {
+    color: hsl(280, 80%, 55%);
+    text-shadow: 0 0 10px hsla(280, 80%, 55%, 0.5), 0 0 30px hsla(280, 80%, 55%, 0.3);
+  }
+
+  .btn-primary-gaming {
+    @apply relative px-8 py-3 font-display text-sm font-bold uppercase tracking-widest bg-primary text-primary-foreground overflow-hidden;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary-gaming:hover {
+    box-shadow: 0 0 20px hsla(135, 100%, 45%, 0.4), 0 0 40px hsla(135, 100%, 45%, 0.2);
+  }
+
+  .btn-secondary-gaming {
+    @apply relative px-8 py-3 font-display text-sm font-bold uppercase tracking-widest text-foreground border border-border overflow-hidden;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-secondary-gaming:hover {
+    border-color: hsl(280, 80%, 55%);
+    box-shadow: 0 0 20px hsla(280, 80%, 55%, 0.3);
+  }
+
+  .card-gaming {
+    @apply relative bg-card overflow-hidden;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+
+  .diagonal-cut {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+  }
+
+  .diagonal-cut-reverse {
+    clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 100%);
+  }
+
+  .tag-label {
+    @apply font-display text-[10px] font-bold uppercase tracking-[0.3em] px-3 py-1;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  }
+
+  .stat-number {
+    @apply font-display font-black leading-none tracking-tight;
+  }
+}
+
+@layer utilities {
+  .skew-section {
+    transform: skewY(-2deg);
+  }
+  .unskew {
+    transform: skewY(2deg);
+  }
+}
